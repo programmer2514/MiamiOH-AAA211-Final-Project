@@ -68,7 +68,7 @@ function App() {
   // Ensure window location isn't being updated by multiple events at once
   var hasChanged = false;
 
-  // Handle keypresses
+  // Handle keypress
   const handleKeyup = useCallback((e) => {
     if (!hasChanged) {
       var newPage = null;
@@ -89,36 +89,12 @@ function App() {
     }
   }, [getNext, getPrev, setPage, hasChanged]);
 
-  // Handle scrolling
-  const handleWheel = useCallback((e) => {
-    if ((Date.now() - document.lastScroll > 500) && !hasChanged) {
-      var newPage = null;
-
-      if (e.deltaY > 4) {
-        newPage = getNext();
-      }
-      
-      if (e.deltaY < -4) {
-        newPage = getPrev();
-      }
-
-      if (newPage !== null) {
-        hasChanged = true;
-        document.lastScroll = Date.now();
-        location.href = newPage[1];
-        setPage(newPage[0]);
-      }
-    }
-  }, [getNext, getPrev, setPage, hasChanged, document.lastScroll]);
-
-  // Remove old keyboard/mouse shortcuts
+  // Remove old keyboard shortcuts
   document.removeEventListener('keyup', handleKeyup, false);
-  document.removeEventListener('wheel', handleWheel, false);
 
-  // Register keyboard/mouse shortcuts
+  // Register keyboard shortcuts
   document.addEventListener('keyup', handleKeyup);
-  document.addEventListener('wheel', handleWheel);
-
+  
   return (
     <>
       <Head title={ page }/>

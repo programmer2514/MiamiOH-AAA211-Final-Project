@@ -2,7 +2,7 @@ import React from 'react';
 
 export default function SlideDots({ page, setPage }) {
   return (
-    <div className='fixed top-1/2 right-0 -translate-y-1/2 *:bg-gray-400'>
+    <div className='fixed top-1/2 right-3 -translate-y-1/2 *:bg-gray-400'>
       <a
         className='block w-3 h-3 opacity-25 rounded-full z-50 m-4 hover:opacity-50 focus-visible:opacity-50'
         style={{

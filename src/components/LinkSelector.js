@@ -7,14 +7,14 @@ export default function LinkSelector({ page, pageReq }) {
   ? (
     <>
       <img
-        className='inline absolute h-12 -translate-y-[0.35rem] -translate-x-10'
+        className='inline absolute h-12 -translate-y-[0.35rem] -translate-x-10 [@media(max-height:600px)]:hidden'
         src={ Selector }
         role='presentation'
         alt=''
       />
       <span className='text-[#fcb800]'>{ pageReq }</span>
       <img
-        className='inline absolute h-12 -translate-y-[0.3rem] -scale-x-100 translate-x-1'
+        className='inline absolute h-12 -translate-y-[0.3rem] -scale-x-100 translate-x-1 [@media(max-height:600px)]:hidden'
         src={ Selector }
         role='presentation'
         alt=''

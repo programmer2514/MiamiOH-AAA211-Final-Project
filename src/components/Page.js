@@ -6,17 +6,17 @@ import MediaBundle from './../pages/MediaBundle';
 import Resources from './../pages/Resources';
 import About from './../pages/About';
 
-export default function Page({ page }) {
+export default function Page({ page, setPage, className }) {
   switch (page) {
     case 'Home':
-      return <Home page={ page } />;
+      return <Home className={ className } page={ page } setPage={ setPage } />;
     case 'About':
-      return <About />;
+      return <About className={ className } page={ page } setPage={ setPage } />;
     case 'Resources':
-      return <Resources />;
+      return <Resources className={ className } page={ page } setPage={ setPage } />;
     case 'Media Bundle':
-      return <MediaBundle />;
+      return <MediaBundle className={ className } page={ page } setPage={ setPage } />;
     case 'FAQ':
-      return <FAQ />;
+      return <FAQ className={ className } page={ page } setPage={ setPage } />;
   }
 }

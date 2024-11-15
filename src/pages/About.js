@@ -1,9 +1,12 @@
 import React from 'react';
 
-export default function About() {
+export default function About({ page, setPage, className }) {
   return (
-    <main id='content' className='bg-white mt-28 h-[calc(100vh-10.5rem)]'>
-      About Page!
+    <main
+      id='content'
+      className={className + ' bg-white'}
+    >
+      { page } Page!
     </main>
   );
 }

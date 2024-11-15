@@ -19,7 +19,7 @@ export default function Header({ page, setPage }) {
           alt='Header logo: diversity & disability'
         />
       </a>
-      <span className='w-96 portrait:w-0' role='presentation'></span>
+      <span className='w-96 max-md:w-0' role='presentation'></span>
       <HamburgerMenu page={ page } setPage={ setPage } />
     </header>
   );
