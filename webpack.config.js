@@ -14,7 +14,7 @@ const HWP = require('html-webpack-plugin'); module.exports = {
             exclude: /node_modules/,
             use: ['style-loader', 'css-loader']
         }, {
-            test: /\.(png|svg|jpg|jpeg|gif)$/i,
+            test: /\.(png|svg|jpg|jpeg|gif|ico)$/i,
             type: 'asset/resource',
         }]
     },

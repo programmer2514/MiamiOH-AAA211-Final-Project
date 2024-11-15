@@ -1,127 +1,144 @@
-import React, { useState } from 'react';
+import React, { useCallback, useState } from 'react';
 import client from 'react-dom/client';
 
 import './build.css';
 
-import HeaderIconImg from './images/HeaderIcon.png';
-import FrameworkImg from './images/Framework.jpg';
-import ResearchImg from './images/Research.jpg';
-import ActionImg from './images/Action.jpg';
-
+import Head from './components/Head';
 import Header from './components/Header';
-import Body from './components/Body';
 import Footer from './components/Footer';
-import NavLink from './components/NavLink';
-import Card from './components/Card';
+import Body from './components/Body';
+import HiddenButton from './components/HiddenButton';
 
-import PageContainer from './components/page/PageContainer';
-import TheoreticalFramework from './components/pages/TheoreticalFramework';
-import ResearchProcess from './components/pages/ResearchProcess';
-import ActionPlan from './components/pages/ActionPlan';
+document.lastScroll = 0;
 
 function App() {
 
-  const [page, setPage] = useState('');
+  // Get page from URL
+  var urlPage;
+  switch (window.location.href.match(/[?#](.*)/)[1]) {
+    case 'about':
+      urlPage = 'About';
+      break;
+    case 'resources':
+      urlPage = 'Resources';
+      break;
+    case 'media-bundle':
+      urlPage = 'Media Bundle';
+      break;
+    case 'faq':
+      urlPage = 'FAQ';
+      break;
+    default:
+      urlPage = 'Home';
+      break;
+  }
+  const [page, setPage] = useState(urlPage);
 
-  const disableOnPageSwitch = (page == '') ? "0" : "-1";
+  // Get next page
+  function getNext() {
+    switch (page) {
+      case 'Home':
+        return ['About', '#about'];
+      case 'About':
+        return ['Resources', '#resources'];
+      case 'Resources':
+        return ['Media Bundle', '#media-bundle'];
+      case 'Media Bundle':
+        return ['FAQ', '#faq'];
+      case 'FAQ':
+        return null;
+    }
+  }
+
+  // Get previous page
+  function getPrev() {
+    switch (page) {
+      case 'Home':
+        return null;
+      case 'About':
+        return ['Home', '#'];
+      case 'Resources':
+        return ['About', '#about'];
+      case 'Media Bundle':
+        return ['Resources', '#resources'];
+      case 'FAQ':
+        return ['Media Bundle', '#media-bundle'];
+    }
+  }
+
+  // Ensure window location isn't being updated by multiple events at once
+  var hasChanged = false;
+
+  // Handle keypresses
+  const handleKeyup = useCallback((e) => {
+    if (!hasChanged) {
+      var newPage = null;
+
+      if (e.key === 'ArrowDown') {
+        newPage = getNext();
+      }
+
+      if (e.key === 'ArrowUp') {
+        newPage = getPrev();
+      }
+
+      if (newPage !== null) {
+        hasChanged = true;
+        location.href = newPage[1];
+        setPage(newPage[0]);
+      }
+    }
+  }, [getNext, getPrev, setPage, hasChanged]);
+
+  // Handle scrolling
+  const handleWheel = useCallback((e) => {
+    if ((Date.now() - document.lastScroll > 500) && !hasChanged) {
+      var newPage = null;
+
+      if (e.deltaY > 4) {
+        newPage = getNext();
+      }
+      
+      if (e.deltaY < -4) {
+        newPage = getPrev();
+      }
+
+      if (newPage !== null) {
+        hasChanged = true;
+        document.lastScroll = Date.now();
+        location.href = newPage[1];
+        setPage(newPage[0]);
+      }
+    }
+  }, [getNext, getPrev, setPage, hasChanged, document.lastScroll]);
+
+  // Remove old keyboard/mouse shortcuts
+  document.removeEventListener('keyup', handleKeyup, false);
+  document.removeEventListener('wheel', handleWheel, false);
+
+  // Register keyboard/mouse shortcuts
+  document.addEventListener('keyup', handleKeyup);
+  document.addEventListener('wheel', handleWheel);
 
   return (
     <>
-      <Header
-        image={HeaderIconImg}
-        title='Multimodal Narrative: Disability Inclusion'
-        tabIndex={disableOnPageSwitch}
-        links={[
-          <NavLink
-            key='0'
-            text='Annotated Bibliography'
-            tabIndex={disableOnPageSwitch}
-            href='//docs.google.com/document/d/1MC2VobxaLlIYjQ3QYqFYaiFJLNwp-sns-JuJ7D27sdA/edit?usp=sharing'
-          />
-        ]}
+      <Head title={ page }/>
+
+      <HiddenButton
+        className='top-0'
+        text='Skip to content'
+        href='#content'
       />
 
-      <Body>
-        <br />
-        <h2 className='text-5xl mx-56 mb-12 text-center leading-tight portrait:mx-8'>
-          &ldquo;How can we help create a society that allows disabled people
-          not only to <b>participate</b> but to <b>flourish</b>?&rdquo;
-        </h2>
-        <p className='mx-4 mb-6'>
-          As I was diving into sources on the topic of disability, this is the
-          question I began to ask myself. What is modern society getting right?
-          What are we getting wrong? How should we improve? What does that look
-          like practically?
-        </p>
-        <p className='mx-4 mb-6'>
-          Over the past few weeks, I have been building a research archive of
-          several sources that provide some amazing insight into these questions.
-        </p>
-        <p className='mx-4 mb-6'>
-          You can find more information below:
-        </p>
-        <div id='cards' className='text-center'>
-          <Card
-            title='Theoretical Framework'
-            image={FrameworkImg}
-            tabIndex={disableOnPageSwitch}
-            onClick={() => { setPage('Theoretical Framework') }}
-          />
-          <Card
-            title='Research Process'
-            image={ResearchImg}
-            tabIndex={disableOnPageSwitch}
-            onClick={() => { setPage('Research Process') }}
-          />
-          <Card
-            title='Action Plan'
-            image={ActionImg}
-            tabIndex={disableOnPageSwitch}
-            onClick={() => { setPage('Action Plan') }}
-          />
-        </div>
-      </Body>
+      <Header page={ page } setPage={ setPage } />
+      <Body page={ page } setPage={ setPage } />
+      <Footer />
 
-      <PageContainer page={page} setPage={setPage}>
-        <TheoreticalFramework page={page} />
-        <ResearchProcess page={page} />
-        <ActionPlan page={page} />
-      </PageContainer>
-      
-      <Footer
-        year={new Date().getFullYear()}
-        holder='Benjamin Pryor'
-        tabIndex={disableOnPageSwitch}
-        links={[
-          <NavLink
-            key='0'
-            text='View Source'
-            tabIndex={disableOnPageSwitch}
-            href='https://github.com/programmer2514/AAA211-Multimodal-Narrative/tree/main/src'
-          />,
-          <NavLink
-            key='1'
-            text='My Projects'
-            tabIndex={disableOnPageSwitch}
-            href='//programmer2514.github.io/'
-          />
-        ]}
-      >
-        <p>Made with</p>
-        <NavLink
-          className='!mx-1 underline after:hidden portrait:!mt-0'
-          text='ReactJS'
-          tabIndex={disableOnPageSwitch}
-          href='//react.dev/'
-        />
-        <p>and</p>
-        <NavLink
-          className='!ml-1 underline after:hidden portrait:!mt-0'
-          text='TailwindCSS'
-          tabIndex={disableOnPageSwitch}
-          href='//tailwindcss.com/'
-        />
-      </Footer>
+      <HiddenButton
+        className='bottom-0'
+        text='Back to top'
+        href='#header'
+      />
     </>
   )
 }
