@@ -14,23 +14,22 @@ document.lastScroll = 0;
 function App() {
 
   // Get page from URL
-  var urlPage;
-  switch (window.location.href.match(/[?#](.*)/)[1]) {
-    case 'about':
-      urlPage = 'About';
-      break;
-    case 'resources':
-      urlPage = 'Resources';
-      break;
-    case 'media-bundle':
-      urlPage = 'Media Bundle';
-      break;
-    case 'faq':
-      urlPage = 'FAQ';
-      break;
-    default:
-      urlPage = 'Home';
-      break;
+  var urlPage = 'Home';
+  if (window.location.href.match(/[?#](.*)/)) {
+    switch (window.location.href.match(/[?#](.*)/)[1]) {
+      case 'about':
+        urlPage = 'About';
+        break;
+      case 'resources':
+        urlPage = 'Resources';
+        break;
+      case 'media-bundle':
+        urlPage = 'Media Bundle';
+        break;
+      case 'faq':
+        urlPage = 'FAQ';
+        break;
+    }
   }
   const [page, setPage] = useState(urlPage);
 
