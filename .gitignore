@@ -134,3 +134,4 @@ dist
 
 # VS Code workspace
 /.vscode
+/.BULK_RENAME.txt
