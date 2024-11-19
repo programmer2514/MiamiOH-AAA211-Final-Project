@@ -1,5 +1,6 @@
-import React from 'react';
+import React, { useContext } from 'react';
 
+import { PageContext } from '..';
 import {
   PageHome,
   PageFAQ,
@@ -9,19 +10,21 @@ import {
   PageArticle,
 } from './../pages';
 
-export default function Page({ page, setPage, className }) {
+export default function Page({ className }) {
+  const page = useContext(PageContext);
+
   switch (page) {
     case 'Home':
-      return <PageHome className={className} page={page} setPage={setPage} />;
+      return <PageHome className={className} />;
     case 'About':
-      return <PageAbout className={className} page={page} setPage={setPage} />;
+      return <PageAbout className={className} />;
     case 'Resources':
-      return <PageResources className={className} page={page} setPage={setPage} />;
+      return <PageResources className={className} />;
     case 'Media Bundle':
-      return <PageMediaBundle className={className} page={page} setPage={setPage} />;
+      return <PageMediaBundle className={className} />;
     case 'FAQ':
-      return <PageFAQ className={className} page={page} setPage={setPage} />;
+      return <PageFAQ className={className} />;
     default:
-      return <PageArticle className={className} page={page} setPage={setPage} />;
+      return <PageArticle className={className} />;
   }
 }

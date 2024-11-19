@@ -4,7 +4,7 @@ export default function DisabilityStripes() {
   return (
     <svg
       id="stripes"
-      className="fixed top-0 left-0 w-full h-screen brightness-[0.25] z-0 translate-x-[14vw]"
+      className="fixed top-0 left-0 w-full h-screen brightness-25 z-0 translate-x-[14%]"
       viewBox="0 0 1362.55 1080"
       preserveAspectRatio="none"
       role="presentation"

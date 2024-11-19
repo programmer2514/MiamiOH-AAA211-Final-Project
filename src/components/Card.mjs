@@ -1,11 +1,22 @@
 import React from 'react';
 
-export default function Card({ image, title, subtitle, href, onClick }) {
+export default function Card({ src, alt, title, subtitle, href, buttonText = 'Read Article' }) {
   return (
-    <a>
-      <img />
-      <h2></h2>
-      <h3></h3>
+    <a
+      id="card"
+      className="w-96 max-w-full flex flex-col justify-start items-stretch content-start bg-zinc-800 border-1 border-zinc-700 border-solid m-4 p-4 rounded-xl drop-shadow-md hover:translate-y-[0.125rem] hover:drop-shadow-sm"
+      href={href}
+      role="button"
+      aria-label={'Read Article - ' + title}
+    >
+      <img
+        className="rounded-xl w-full"
+        src={src}
+        alt={alt}
+      />
+      <h2 className="mt-4 mx-1 text-2xl font-bold text-zinc-100">{title}</h2>
+      <h3 className="text-zinc-400 mx-1 uppercase text-base font-extralight border-b-1 border-zinc-700 pb-4 mb-5 flex-grow">{subtitle}</h3>
+      <p className="text-lg font-light text-zinc-100 px-4 py-2 w-fit rounded-xl drop-shadow-sm from-[#6a14d1] to-[#c82090] bg-gradient-to-br my-1">{buttonText}</p>
     </a>
   );
 }

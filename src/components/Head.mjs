@@ -1,12 +1,16 @@
-import React from 'react';
+import React, { useContext } from 'react';
 import { Helmet } from 'react-helmet';
 
-export default function Head({ title }) {
+import { PageContext } from '..';
+
+export default function Head() {
+  const page = useContext(PageContext);
+
   return (
     <Helmet>
       <title>
         Diversity & Disability |
-        { ' ' + title }
+        { ' ' + page }
       </title>
     </Helmet>
   );

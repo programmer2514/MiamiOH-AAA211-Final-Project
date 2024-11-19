@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 
 import { LinkSelector } from '.';
 
-export default function HamburgerMenu({ page, setPage }) {
+export default function HamburgerMenu() {
   const [isChecked, setIsChecked] = useState(false);
 
   const tabIndex = (isChecked) ? '0' : '-1';
@@ -21,81 +21,66 @@ export default function HamburgerMenu({ page, setPage }) {
         aria-expanded={isChecked}
       />
 
-      <div className="block h-1 w-full rounded-full bg-[#181818] transition-transform duration-250 peer-checked/hamburger:rotate-45 peer-checked/hamburger:translate-y-[0.625rem]" role="presentation"></div>
-      <div className="block h-1 w-full rounded-full bg-[#181818] transition-transform duration-250 peer-checked/hamburger:scale-y-0" role="presentation"></div>
-      <div className="block h-1 w-full rounded-full bg-[#181818] transition-transform duration-250 peer-checked/hamburger:-rotate-45 peer-checked/hamburger:-translate-y-[0.5rem]" role="presentation"></div>
+      <div className="block h-1 w-full rounded-full bg-zinc-900 transition-transform duration-250 peer-checked/hamburger:rotate-45 peer-checked/hamburger:translate-y-[0.625rem]" role="presentation"></div>
+      <div className="block h-1 w-full rounded-full bg-zinc-900 transition-transform duration-250 peer-checked/hamburger:scale-y-0" role="presentation"></div>
+      <div className="block h-1 w-full rounded-full bg-zinc-900 transition-transform duration-250 peer-checked/hamburger:-rotate-45 peer-checked/hamburger:-translate-y-[0.5rem]" role="presentation"></div>
 
-      <nav className="fixed right-0 top-28 z-30 h-[calc(100vh-10.5rem)] w-[28rem] max-w-full py-4 px-10 flex flex-col flex-wrap translate-x-full transition-transform duration-250 bg-[#181818] text-white text-2xl pointer-events-none peer-checked/hamburger:translate-x-0 peer-checked/hamburger:pointer-events-auto max-lg:landscape:h-[calc(100vh-7rem)]" aria-hidden={!isChecked}>
+      <nav className="fixed right-0 top-28 z-50 h-body w-[28rem] max-w-full py-4 px-10 flex flex-col flex-wrap translate-x-full transition-transform duration-250 bg-zinc-900 text-zinc-100 text-2xl pointer-events-none peer-checked/hamburger:translate-x-0 peer-checked/hamburger:pointer-events-auto max-lg:landscape:h-body-no-footer" aria-hidden={!isChecked}>
 
         <a
-          className="block p-4 hover:text-[#fcb800] focus-visible:text-[#fcb800]"
+          className="block p-4 hover:text-theme-orange focus-visible:text-theme-orange"
           href="#"
           aria-label="Home"
-          onClick={() => {
-            setPage('Home');
-            setIsChecked(false);
-          }}
+          onClick={() => { setIsChecked(false); }}
           tabIndex={tabIndex}
         >
-          <LinkSelector page={page} pageReq="Home" />
+          <LinkSelector pageReq="Home" />
         </a>
 
         <a
-          className="block p-4 hover:text-[#fcb800] focus-visible:text-[#fcb800]"
+          className="block p-4 hover:text-theme-orange focus-visible:text-theme-orange"
           href="#about"
           aria-label="About"
-          onClick={() => {
-            setPage('About');
-            setIsChecked(false);
-          }}
+          onClick={() => { setIsChecked(false); }}
           tabIndex={tabIndex}
         >
-          <LinkSelector page={page} pageReq="About" />
+          <LinkSelector pageReq="About" />
         </a>
 
         <a
-          className="block p-4 hover:text-[#fcb800] focus-visible:text-[#fcb800]"
+          className="block p-4 hover:text-theme-orange focus-visible:text-theme-orange"
           href="#resources"
           aria-label="Resources"
-          onClick={() => {
-            setPage('Resources');
-            setIsChecked(false);
-          }}
+          onClick={() => { setIsChecked(false); }}
           tabIndex={tabIndex}
         >
-          <LinkSelector page={page} pageReq="Resources" />
+          <LinkSelector pageReq="Resources" />
         </a>
 
         <a
-          className="block p-4 hover:text-[#fcb800] focus-visible:text-[#fcb800]"
+          className="block p-4 hover:text-theme-orange focus-visible:text-theme-orange"
           href="#media-bundle"
           aria-label="Media Bundle"
-          onClick={() => {
-            setPage('Media Bundle');
-            setIsChecked(false);
-          }}
+          onClick={() => { setIsChecked(false); }}
           tabIndex={tabIndex}
         >
-          <LinkSelector page={page} pageReq="Media Bundle" />
+          <LinkSelector pageReq="Media Bundle" />
         </a>
 
         <a
-          className="block p-4 hover:text-[#fcb800] focus-visible:text-[#fcb800]"
+          className="block p-4 hover:text-theme-orange focus-visible:text-theme-orange"
           href="#faq"
           aria-label="FAQ"
-          onClick={() => {
-            setPage('FAQ');
-            setIsChecked(false);
-          }}
+          onClick={() => { setIsChecked(false); }}
           tabIndex={tabIndex}
         >
-          <LinkSelector page={page} pageReq="FAQ" />
+          <LinkSelector pageReq="FAQ" />
         </a>
 
         <div className="absolute bottom-4 left-0 w-full flex justify-around flex-row flex-wrap text-xl [@media(max-height:525px)]:hidden">
 
           <a
-            className="block p-4 hover:text-[#fcb800] focus-visible:text-[#fcb800] after:block after:h-[2px] after:content-[''] after:bottom-0 after:left-1/2 after:relative after:bg-[#fcb800] after:transition-all after:duration-200 after:w-0 hover:after:w-full hover:after:left-0 focus-visible:after:w-full focus-visible:after:left-0"
+            className="block p-4 hover:text-theme-orange focus-visible:text-theme-orange after:block after:h-2p after:content-blank after:bottom-0 after:left-1/2 after:relative after:bg-theme-orange after:transition-all after:duration-200 after:w-0 hover:after:w-full hover:after:left-0 focus-visible:after:w-full focus-visible:after:left-0"
             href="//github.com/programmer2514/MiamiOH-AAA211-Final-Project/tree/main/src"
             target="_blank"
             rel="noreferrer"
@@ -106,7 +91,7 @@ export default function HamburgerMenu({ page, setPage }) {
           </a>
 
           <a
-            className="block p-4 hover:text-[#fcb800] focus-visible:text-[#fcb800] after:block after:h-[2px] after:content-[''] after:bottom-0 after:left-1/2 after:relative after:bg-[#fcb800] after:transition-all after:duration-200 after:w-0 hover:after:w-full hover:after:left-0 focus-visible:after:w-full focus-visible:after:left-0"
+            className="block p-4 hover:text-theme-orange focus-visible:text-theme-orange after:block after:h-2p after:content-blank after:bottom-0 after:left-1/2 after:relative after:bg-theme-orange after:transition-all after:duration-200 after:w-0 hover:after:w-full hover:after:left-0 focus-visible:after:w-full focus-visible:after:left-0"
             href="//programmer2514.github.io/"
             target="_blank"
             rel="noreferrer"
@@ -121,7 +106,7 @@ export default function HamburgerMenu({ page, setPage }) {
       </nav>
 
       <a
-        className="fixed left-0 top-28 h-[calc(100vh-10.5rem)] w-full z-20 opacity-0 transition-opacity bg-[#181818] pointer-events-none peer-checked/hamburger:opacity-50 peer-checked/hamburger:pointer-events-auto max-lg:landscape:h-[calc(100vh-7rem)]"
+        className="fixed left-0 top-28 h-body w-full z-40 opacity-0 transition-opacity bg-zinc-900 pointer-events-none peer-checked/hamburger:opacity-50 peer-checked/hamburger:pointer-events-auto max-lg:landscape:h-body-no-footer"
         role="presentation"
         tabIndex="-1"
         onClick={() => { setIsChecked(false); }}

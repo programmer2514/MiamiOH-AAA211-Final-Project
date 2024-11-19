@@ -4,13 +4,12 @@ import { ImageLogo } from './../images';
 
 import { HamburgerMenu } from '.';
 
-export default function Header({ page, setPage }) {
+export default function Header() {
   return (
-    <header id="header" className="fixed top-0 left-0 w-full z-40 p-4 bg-[#f2ae00] flex justify-around items-center drop-shadow-md">
+    <header id="header" className="fixed top-0 left-0 w-full z-40 p-4 bg-theme-orange-light flex justify-around items-center drop-shadow-md">
       <a
         href="#"
-        onClick={() => { setPage('Home'); }}
-        aria-label="Home Link"
+        aria-label="Header Logo - Home Link"
       >
         <img
           id="logo"
@@ -20,7 +19,7 @@ export default function Header({ page, setPage }) {
         />
       </a>
       <span className="w-96 max-md:w-0" role="presentation"></span>
-      <HamburgerMenu page={page} setPage={setPage} />
+      <HamburgerMenu />
     </header>
   );
 }

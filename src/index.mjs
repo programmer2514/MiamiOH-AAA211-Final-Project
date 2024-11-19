@@ -1,118 +1,25 @@
-import React, { useState } from 'react';
+import React, { useState, createContext } from 'react';
 import client from 'react-dom/client';
 
 import './build.css';
 
+import { getCurrentPage } from './pages';
+import { registerEvents } from './events';
 import { Head, Header, Footer, Body, HiddenButton } from './components';
 
-function App() {
-  // Get current page from URL
-  function getCurrent() {
-    const currentPage = location.href.match(/[?#](.*)/);
-    if (currentPage) {
-      switch (currentPage[1]) {
-        case '':
-          return 'Home';
-        case 'about':
-          return 'About';
-        case 'resources':
-          return 'Resources';
-        case 'media-bundle':
-          return 'Media Bundle';
-        case 'faq':
-          return 'FAQ';
-        default:
-          return 'Article' + Math.random();
-      }
-    }
-    return 'Home';
-  }
+export const PageContext = createContext('Home');
 
-  // Get next page
-  function getNext() {
-    switch (page) {
-      case 'Home':
-        return ['About', '#about'];
-      case 'About':
-        return ['Resources', '#resources'];
-      case 'Resources':
-        return ['Media Bundle', '#media-bundle'];
-      case 'Media Bundle':
-        return ['FAQ', '#faq'];
-      default:
-        return null;
-    }
-  }
-
-  // Get previous page
-  function getPrev() {
-    switch (page) {
-      case 'About':
-        return ['Home', '#'];
-      case 'Resources':
-        return ['About', '#about'];
-      case 'Media Bundle':
-        return ['Resources', '#resources'];
-      case 'FAQ':
-        return ['Media Bundle', '#media-bundle'];
-      default:
-        return null;
-    }
-  }
-
+export default function App() {
   // Set starting page to page in URL
-  const [page, setPage] = useState(getCurrent());
+  const [page, setPage] = useState(getCurrentPage());
 
-  // Handle keypress
-  function handleKeyup(e) {
-    // Arrow up and down
-    if (!getCurrent().includes('Article')) {
-      var newPage = null;
-
-      if (e.key === 'ArrowDown') {
-        newPage = getNext();
-      }
-
-      if (e.key === 'ArrowUp') {
-        newPage = getPrev();
-      }
-
-      if (newPage !== null) {
-        history.replaceState(null, '', newPage[1]);
-        setPage(newPage[0]);
-      }
-    }
-
-    // Enter key
-    if (e.key === 'Enter') {
-      document.activeElement.click();
-    }
-  }
-
-  // Handle href change
-  function handleHref(e) {
-    var hash = location.href.match(/[?#](.*)/);
-    hash = (hash) ? hash[1] : '';
-    if (page === getCurrent()) {
-      return;
-    }
-    else if (hash === 'header' || hash === 'content') {
-      history.replaceState(null, '', e.oldURL);
-    }
-    else {
-      setPage(getCurrent());
-    }
-  }
-
-  // Register keyboard shortcuts
-  onkeyup = handleKeyup;
-
-  // Handle href change
-  onhashchange = handleHref;
+  // Setup event handlers
+  registerEvents(page, setPage);
 
   return (
-    <>
-      <Head title={page} />
+    <PageContext.Provider value={page}>
+
+      <Head />
 
       <HiddenButton
         className="top-0"
@@ -120,8 +27,8 @@ function App() {
         href="#content"
       />
 
-      <Header page={page} setPage={setPage} />
-      <Body page={page} setPage={setPage} />
+      <Header />
+      <Body />
       <Footer />
 
       <HiddenButton
@@ -129,7 +36,7 @@ function App() {
         text="Back to top"
         href="#header"
       />
-    </>
+    </PageContext.Provider>
   );
 }
 

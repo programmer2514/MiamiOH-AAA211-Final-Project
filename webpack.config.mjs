@@ -71,7 +71,7 @@ export default {
         { from: './src/images/favicon/favicon.ico' },
         { from: './src/images/favicon/favicon-16x16.png' },
         { from: './src/images/favicon/favicon-32x32.png' },
-        { from: './src/images/SocialCard.png' },
+        { from: './src/images/favicon/SocialCard.png' },
       ],
     }),
   ],

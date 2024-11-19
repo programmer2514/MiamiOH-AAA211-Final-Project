@@ -1,8 +1,11 @@
-import React, { useEffect } from 'react';
+import React, { useContext, useEffect } from 'react';
 
+import { PageContext } from '..';
 import { DisabilityStripes, GradientBackground } from './../components';
 
-export default function FAQ({ page, setPage, className }) {
+export default function FAQ({ className }) {
+  const page = useContext(PageContext);
+
   useEffect(() => {
     document.getElementById('stripes')?.classList.add('!opacity-0', '!translate-x-1/4');
     document.getElementById('bg-grad-old')?.classList.remove('!opacity-0');
@@ -25,7 +28,7 @@ export default function FAQ({ page, setPage, className }) {
   return (
     <main
       id="content"
-      className={className + ' bg-[#181818] flex justify-center items-start content-start text-center'}
+      className={className + ' bg-zinc-900 flex justify-center items-start content-start text-center'}
     >
 
       <DisabilityStripes />
@@ -36,7 +39,7 @@ export default function FAQ({ page, setPage, className }) {
         to="#23e77c"
       />
 
-      <h1 id="h1" className="text-white text-[3vmax] max-w-full m-8 font-bold leading-normal drop-shadow-2xl max-lg:text-[4vmax]">
+      <h1 id="h1" className="text-zinc-100 text-[3vmax] max-w-full m-8 font-bold leading-normal drop-shadow-2xl max-lg:text-[4vmax]">
         Frequently Asked Questions
       </h1>
 

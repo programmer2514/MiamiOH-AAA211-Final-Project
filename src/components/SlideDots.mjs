@@ -1,10 +1,14 @@
-import React from 'react';
+import React, { useContext } from 'react';
 
-export default function SlideDots({ page, setPage }) {
+import { PageContext } from '..';
+
+export default function SlideDots() {
+  const page = useContext(PageContext);
+
   return (page.includes('Article'))
     ? (<></>)
     : (
-      <div className="fixed top-[calc(50%+3.5rem)] right-3 -translate-y-1/2 *:bg-gray-400">
+      <div className="fixed top-body/2 right-3 -translate-y-1/2 z-30 *:bg-zinc-400">
         <a
           className="block w-3 h-3 opacity-25 rounded-full z-50 m-4 hover:opacity-50 focus-visible:opacity-50"
           style={{
@@ -12,7 +16,6 @@ export default function SlideDots({ page, setPage }) {
           }}
           href="#"
           aria-label="Home (Slideshow dot button)"
-          onClick={() => { setPage('Home'); }}
         >
         </a>
         <a
@@ -22,7 +25,6 @@ export default function SlideDots({ page, setPage }) {
           }}
           href="#about"
           aria-label="About (Slideshow dot button)"
-          onClick={() => { setPage('About'); }}
         >
         </a>
         <a
@@ -32,7 +34,6 @@ export default function SlideDots({ page, setPage }) {
           }}
           href="#resources"
           aria-label="Resources (Slideshow dot button)"
-          onClick={() => { setPage('Resources'); }}
         >
         </a>
         <a
@@ -42,7 +43,6 @@ export default function SlideDots({ page, setPage }) {
           }}
           href="#media-bundle"
           aria-label="Media Bundle (Slideshow dot button)"
-          onClick={() => { setPage('Media Bundle'); }}
         >
         </a>
         <a
@@ -52,7 +52,6 @@ export default function SlideDots({ page, setPage }) {
           }}
           href="#faq"
           aria-label="FAQ (Slideshow dot button)"
-          onClick={() => { setPage('FAQ'); }}
         >
         </a>
       </div>
