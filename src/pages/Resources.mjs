@@ -73,7 +73,7 @@ export default function Resources({ className }) {
 
         <Card
           src={ImageWhatIsADisability}
-          alt=""
+          alt="A large question mark drawn on a chalkboard background with white chalk"
           title="What is a Disability?"
           subtitle="The answer may surprise you"
           href="#what-is-a-disability"
@@ -81,7 +81,7 @@ export default function Resources({ className }) {
 
         <Card
           src={ImageTheSocialModel}
-          alt=""
+          alt="A simplified graphic of a group of people representing various disabilities is overlaid in the colors of the rainbow on a black background"
           title="The Social Model"
           subtitle="A new way to view disability"
           href="#the-social-model"
@@ -89,7 +89,7 @@ export default function Resources({ className }) {
 
         <Card
           src={ImageAccidentalDiscrimination}
-          alt=""
+          alt="A person in a wheelchair sits in front of a flight of stairs, staring at them"
           title="Accidental Discrimination"
           subtitle="How society excludes disabled people and what you can do about it"
           href="#accidental-discrimination"
@@ -97,7 +97,7 @@ export default function Resources({ className }) {
 
         <Card
           src={ImageEnactingSocialChange}
-          alt=""
+          alt="A man with a wheelchair and a breathing apparatus having a beer with three other people"
           title="Enacting Social Change"
           subtitle="How do I change society?"
           href="#enacting-social-change"
@@ -105,7 +105,7 @@ export default function Resources({ className }) {
 
         <Card
           src={ImageDisabilityInEverydayLife}
-          alt=""
+          alt="A man in a wheelchair, a man with a missing leg, and a woman have a drink and play corn hole together"
           title="Disability in Everyday Life"
           subtitle="Small ways that you can make a big difference"
           href="#disability-in-everyday-life"
@@ -113,7 +113,7 @@ export default function Resources({ className }) {
 
         <Card
           src={ImageDisabilityInTheWorkplace}
-          alt=""
+          alt="A woman in a wheelchair working on her laptop at an office desk"
           title="Disability in the Workplace"
           subtitle="Fostering an inclusive and productive work environment"
           href="#disability-in-the-workplace"

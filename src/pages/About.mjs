@@ -109,7 +109,12 @@ export default function About({ className }) {
             If you have questions, comments, or concerns, please don&rsquo;t
             hesitate to
             {' '}
-            <a>
+            <a
+              className="text-sky-400 underline"
+              href="//programmer2514.github.io/contact.html"
+              target="_blank"
+              rel="noreferrer"
+            >
               contact me
             </a>
             .
@@ -118,12 +123,12 @@ export default function About({ className }) {
         <img
           className="w-96 block rounded-xl max-lg:hidden"
           src={ImageProfile}
-          alt=""
+          alt="A person with a dark blue polo shirt and asymmetrical purple hair stands in front of a blurry natural background"
         />
         <img
           className="w-11/12 mt-8 block rounded-xl lg:hidden"
           src={ImageProfileLandscape}
-          alt=""
+          alt="A person with a dark blue polo shirt and asymmetrical purple hair stands in front of a blurry natural background"
         />
       </div>
 

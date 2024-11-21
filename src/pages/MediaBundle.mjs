@@ -3,6 +3,15 @@ import React, { useContext, useEffect } from 'react';
 import { PageContext } from '..';
 import { DisabilityStripes, GradientBackground, Card } from './../components';
 
+import {
+  ImageFacebookTwitter,
+  ImageHandout,
+  ImageInstagram,
+  ImagePamphlet,
+  ImagePoster,
+  ImageSnapchatStory,
+} from './../images/cards';
+
 export default function MediaBundle({ className }) {
   const page = useContext(PageContext);
 
@@ -63,51 +72,62 @@ export default function MediaBundle({ className }) {
         </h1>
 
         <Card
-          src=""
-          alt=""
+          src={ImageInstagram}
+          alt="A square image: The text 'disability ≠ inability' is overlaid on a stylized version of the disability pride flag. The diversity and disability logo is shown in small lettering in the bottom right"
           title="Instagram"
-          href="#"
+          href="Instagram.png"
           buttonText="Download"
+          newPage="true"
+          download="Instagram.png"
         />
 
         <Card
-          src=""
-          alt=""
+          src={ImageSnapchatStory}
+          alt="A portrait-mode image: The text 'disability ≠ inability' is overlaid on a stylized version of the disability pride flag along with the text 'An inclusive world is just around the corner. and it's up to you and me'. The diversity and disability logo is shown in small lettering in the bottom right"
           title="Snapchat / Story"
-          href="#"
+          href="Snapchat.png"
           buttonText="Download"
+          newPage="true"
+          download="Snapchat.png"
         />
 
         <Card
-          src=""
-          alt=""
+          src={ImageFacebookTwitter}
+          alt="A landscape-mode image: The text 'disability ≠ inability' is overlaid on a stylized version of the disability pride flag along with the text 'An inclusive world is just around the corner. and it's up to you and me'. The diversity and disability logo is shown in small lettering in the top right"
           title="Facebook / Twitter"
-          href="#"
+          href="Twitter-Facebook.png"
           buttonText="Download"
+          newPage="true"
+          download="Twitter-Facebook.png"
         />
 
         <Card
-          src=""
+          src={ImagePoster}
           alt=""
           title="Poster"
           href="#"
           buttonText="Download"
+          newPage="true"
+          download="Poster.pdf"
         />
 
         <Card
-          src=""
+          src={ImagePamphlet}
           alt=""
           title="Pamphlet"
           href="#"
           buttonText="Download"
+          newPage="true"
+          download="Pamphlet.pdf"
         />
 
         <Card
-          src=""
-          alt=""
+          src={ImageHandout}
+          alt="The text 'Creating an inclusive world. Together.' is overlaid on a stylized version of the disability pride flag along with the diversity and disability logo. At the bottom of the image is the text 'Scan to learn more:' and a QR code linking to this website"
           title="Handout"
-          href="#"
+          href="Handout.pdf"
           buttonText="Download"
+          download="Handout.pdf"
         />
 
       </div>

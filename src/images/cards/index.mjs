@@ -5,6 +5,13 @@ import ImageEnactingSocialChange from './EnactingSocialChange.jpg';
 import ImageTheSocialModel from './TheSocialModel.jpg';
 import ImageWhatIsADisability from './WhatIsADisability.jpg';
 
+import ImageFacebookTwitter from './FacebookTwitter.jpg';
+import ImageHandout from './Handout.jpg';
+import ImageInstagram from './Instagram.jpg';
+import ImagePamphlet from './Pamphlet.jpg';
+import ImagePoster from './Poster.jpg';
+import ImageSnapchatStory from './SnapchatStory.jpg';
+
 export {
   ImageAccidentalDiscrimination,
   ImageDisabilityInEverydayLife,
@@ -12,4 +19,11 @@ export {
   ImageEnactingSocialChange,
   ImageTheSocialModel,
   ImageWhatIsADisability,
+
+  ImageFacebookTwitter,
+  ImageHandout,
+  ImageInstagram,
+  ImagePamphlet,
+  ImagePoster,
+  ImageSnapchatStory,
 };

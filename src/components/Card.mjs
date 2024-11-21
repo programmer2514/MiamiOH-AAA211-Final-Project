@@ -1,13 +1,14 @@
 import React from 'react';
 
-export default function Card({ src, alt, title, subtitle, href, buttonText = 'Read Article' }) {
+export default function Card({ src, alt, title, subtitle, href, buttonText = 'Read Article', download = false }) {
   return (
     <a
       id="card"
       className="w-96 max-w-full flex flex-col justify-start items-stretch content-start bg-zinc-800 border-1 border-zinc-700 border-solid m-4 p-4 rounded-xl drop-shadow-md hover:translate-y-[0.125rem] hover:drop-shadow-sm"
       href={href}
       role="button"
-      aria-label={'Read Article - ' + title}
+      aria-label={(download ? 'Download - ' : 'Read Article - ') + title}
+      download={download}
     >
       <img
         className="rounded-xl w-full"
