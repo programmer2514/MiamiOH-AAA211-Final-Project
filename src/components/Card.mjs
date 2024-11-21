@@ -1,6 +1,6 @@
 import React from 'react';
 
-export default function Card({ src, alt, title, subtitle, href, buttonText = 'Read Article', download = false }) {
+export default function Card({ src, alt, title, subtitle, href, onLoadHandler, buttonText = 'Read Article', download = false }) {
   return (
     <a
       id="card"
@@ -14,6 +14,7 @@ export default function Card({ src, alt, title, subtitle, href, buttonText = 'Re
         className="rounded-xl w-full"
         src={src}
         alt={alt}
+        onLoad={onLoadHandler}
       />
       <h2 className="mt-4 mx-1 text-2xl font-bold text-zinc-100">{title}</h2>
       <h3 className="text-zinc-400 mx-1 uppercase text-base font-extralight border-b-1 border-zinc-700 pb-4 mb-5 flex-grow">{subtitle}</h3>

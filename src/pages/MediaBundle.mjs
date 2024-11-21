@@ -14,6 +14,29 @@ import {
 
 export default function MediaBundle({ className }) {
   const page = useContext(PageContext);
+  var loaded = 0;
+
+  function onLoadHandler() {
+    if (loaded === 5) {
+      let cardElems = document.querySelectorAll('#card');
+
+      for (let i = 0; i < cardElems.length; i++) {
+        let elem = cardElems[i];
+
+        setTimeout(() => {
+          elem.classList.add('transition-all', 'duration-500');
+          elem.classList.remove('!opacity-0');
+        }, i * 50);
+
+        setTimeout(() => {
+          elem.classList.remove('transition-all', 'duration-500');
+        }, (i * 50) + 500);
+      }
+    }
+    else {
+      loaded++;
+    }
+  }
 
   useEffect(() => {
     document.getElementById('stripes')?.classList.remove('!opacity-0', '!translate-x-1/4');
@@ -33,22 +56,9 @@ export default function MediaBundle({ className }) {
       document.getElementById('h1')?.classList.remove('!opacity-0', '!-translate-y-1/4');
     }, 0);
 
-    let cardElems = document.querySelectorAll('#card');
-
-    for (let i = 0; i < cardElems.length; i++) {
-      let elem = cardElems[i];
-
+    document.querySelectorAll('#card').forEach((elem) => {
       elem.classList.add('!opacity-0');
-
-      setTimeout(() => {
-        elem.classList.add('transition-all', 'duration-500');
-        elem.classList.remove('!opacity-0');
-      }, i * 50);
-
-      setTimeout(() => {
-        elem.classList.remove('transition-all', 'duration-500');
-      }, (i * 50) + 500);
-    }
+    });
   }, [page]);
 
   return (
@@ -79,6 +89,7 @@ export default function MediaBundle({ className }) {
           buttonText="Download"
           newPage="true"
           download="Instagram.png"
+          onLoadHandler={onLoadHandler}
         />
 
         <Card
@@ -89,6 +100,7 @@ export default function MediaBundle({ className }) {
           buttonText="Download"
           newPage="true"
           download="Snapchat.png"
+          onLoadHandler={onLoadHandler}
         />
 
         <Card
@@ -99,6 +111,7 @@ export default function MediaBundle({ className }) {
           buttonText="Download"
           newPage="true"
           download="Twitter-Facebook.png"
+          onLoadHandler={onLoadHandler}
         />
 
         <Card
@@ -109,6 +122,7 @@ export default function MediaBundle({ className }) {
           buttonText="Download"
           newPage="true"
           download="Poster.pdf"
+          onLoadHandler={onLoadHandler}
         />
 
         <Card
@@ -119,6 +133,7 @@ export default function MediaBundle({ className }) {
           buttonText="Download"
           newPage="true"
           download="Pamphlet.pdf"
+          onLoadHandler={onLoadHandler}
         />
 
         <Card
@@ -128,6 +143,7 @@ export default function MediaBundle({ className }) {
           href="Handout.pdf"
           buttonText="Download"
           download="Handout.pdf"
+          onLoadHandler={onLoadHandler}
         />
 
       </div>

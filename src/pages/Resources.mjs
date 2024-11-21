@@ -14,6 +14,29 @@ import {
 
 export default function Resources({ className }) {
   const page = useContext(PageContext);
+  var loaded = 0;
+
+  function onLoadHandler() {
+    if (loaded === 5) {
+      let cardElems = document.querySelectorAll('#card');
+
+      for (let i = 0; i < cardElems.length; i++) {
+        let elem = cardElems[i];
+
+        setTimeout(() => {
+          elem.classList.add('transition-all', 'duration-500');
+          elem.classList.remove('!opacity-0');
+        }, i * 50);
+
+        setTimeout(() => {
+          elem.classList.remove('transition-all', 'duration-500');
+        }, (i * 50) + 500);
+      }
+    }
+    else {
+      loaded++;
+    }
+  }
 
   useEffect(() => {
     document.getElementById('stripes')?.classList.add('!opacity-0', '!translate-x-1/4');
@@ -33,22 +56,9 @@ export default function Resources({ className }) {
       document.getElementById('h1')?.classList.remove('!opacity-0', '!-translate-y-1/4');
     }, 0);
 
-    let cardElems = document.querySelectorAll('#card');
-
-    for (let i = 0; i < cardElems.length; i++) {
-      let elem = cardElems[i];
-
+    document.querySelectorAll('#card').forEach((elem) => {
       elem.classList.add('!opacity-0');
-
-      setTimeout(() => {
-        elem.classList.add('transition-all', 'duration-500');
-        elem.classList.remove('!opacity-0');
-      }, i * 50);
-
-      setTimeout(() => {
-        elem.classList.remove('transition-all', 'duration-500');
-      }, (i * 50) + 500);
-    }
+    });
   }, [page]);
 
   return (
@@ -77,6 +87,7 @@ export default function Resources({ className }) {
           title="What is a Disability?"
           subtitle="The answer may surprise you"
           href="#what-is-a-disability"
+          onLoadHandler={onLoadHandler}
         />
 
         <Card
@@ -85,6 +96,7 @@ export default function Resources({ className }) {
           title="The Social Model"
           subtitle="A new way to view disability"
           href="#the-social-model"
+          onLoadHandler={onLoadHandler}
         />
 
         <Card
@@ -93,6 +105,7 @@ export default function Resources({ className }) {
           title="Accidental Discrimination"
           subtitle="How society excludes disabled people and what you can do about it"
           href="#accidental-discrimination"
+          onLoadHandler={onLoadHandler}
         />
 
         <Card
@@ -101,6 +114,7 @@ export default function Resources({ className }) {
           title="Enacting Social Change"
           subtitle="How do I change society?"
           href="#enacting-social-change"
+          onLoadHandler={onLoadHandler}
         />
 
         <Card
@@ -109,6 +123,7 @@ export default function Resources({ className }) {
           title="Disability in Everyday Life"
           subtitle="Small ways that you can make a big difference"
           href="#disability-in-everyday-life"
+          onLoadHandler={onLoadHandler}
         />
 
         <Card
@@ -117,6 +132,7 @@ export default function Resources({ className }) {
           title="Disability in the Workplace"
           subtitle="Fostering an inclusive and productive work environment"
           href="#disability-in-the-workplace"
+          onLoadHandler={onLoadHandler}
         />
 
       </div>
