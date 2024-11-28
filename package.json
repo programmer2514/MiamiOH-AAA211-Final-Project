@@ -10,13 +10,16 @@
   "license": "MIT",
   "description": "",
   "dependencies": {
+    "@stylistic/eslint-plugin": "^2.11.0",
+    "eslint-stylistic": "^0.0.0-0",
     "major-assignment-2": "file:",
     "react": "^18.3.1",
     "react-dom": "^18.3.1",
     "react-helmet": "^6.1.0",
     "react-markdown": "^9.0.1",
     "reading-time": "^1.5.0",
-    "rehype-raw": "^7.0.0"
+    "rehype-raw": "^7.0.0",
+    "stylistic": "^0.2.4"
   },
   "devDependencies": {
     "@babel/core": "^7.25.8",

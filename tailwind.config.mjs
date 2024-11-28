@@ -47,6 +47,7 @@ export default {
         'body': 'calc(100vh - 10.5rem)',
         'body-no-footer': 'calc(100vh - 7rem)',
         'body/2': 'calc(50vh + 3.5rem)',
+        'body/2-f': 'calc(50vh + 1.75rem)',
         '2p': '2px',
       },
     },

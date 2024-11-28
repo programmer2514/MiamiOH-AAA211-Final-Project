@@ -1,5 +1,7 @@
 import { getCurrentPage, getNextPage, getPrevPage } from './pages';
 
+var currentDate = Date.now();
+
 // Handles keypress events
 function handleKeypress(e, page) {
   // Arrow up and down
@@ -20,7 +22,7 @@ function handleKeypress(e, page) {
   }
 
   // Enter key
-  if (e.key === 'Enter') {
+  if (e.key === 'Enter' && document.activeElement.nodeName === 'INPUT') {
     document.activeElement.click();
   }
 }
@@ -40,8 +42,35 @@ function handlePageChange(e, page, setPage) {
   }
 }
 
+// Handles scrolling between pages
+function handleScroll(e, page) {
+  if (Math.abs(e.deltaY) > 10) {
+    if (Date.now() - currentDate >= 250) {
+      let newPage = null;
+      let main = document.querySelector('main');
+
+      if (e.wheelDeltaY > 0) {
+        if (main.scrollTop === 0) {
+          newPage = getPrevPage(page);
+        }
+      }
+      else {
+        if (main.scrollTop + main.offsetHeight === main.scrollHeight) {
+          newPage = getNextPage(page);
+        }
+      }
+
+      if (newPage !== null) {
+        location.href = newPage;
+      }
+    }
+    currentDate = Date.now();
+  }
+}
+
 // Registers event handlers
 export function registerEvents(page, setPage) {
   onkeyup = e => handleKeypress(e, page);
+  onwheel = e => handleScroll(e, page);
   onhashchange = e => handlePageChange(e, page, setPage);
 }

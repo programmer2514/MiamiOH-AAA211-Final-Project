@@ -19,13 +19,18 @@ export default function HamburgerMenu() {
         checked={isChecked}
         onChange={() => { setIsChecked(!isChecked); }}
         aria-expanded={isChecked}
+        aria-controls="site-nav"
       />
 
-      <div className="block h-1 w-full rounded-full bg-zinc-900 transition-transform duration-250 peer-checked/hamburger:rotate-45 peer-checked/hamburger:translate-y-[0.625rem]" role="presentation"></div>
-      <div className="block h-1 w-full rounded-full bg-zinc-900 transition-transform duration-250 peer-checked/hamburger:scale-y-0" role="presentation"></div>
-      <div className="block h-1 w-full rounded-full bg-zinc-900 transition-transform duration-250 peer-checked/hamburger:-rotate-45 peer-checked/hamburger:-translate-y-[0.5rem]" role="presentation"></div>
+      <div className="block h-1 w-full rounded-full bg-zinc-900 transition-transform duration-200 peer-checked/hamburger:rotate-45 peer-checked/hamburger:translate-y-[0.625rem]" role="presentation"></div>
+      <div className="block h-1 w-full rounded-full bg-zinc-900 transition-transform duration-200 peer-checked/hamburger:scale-y-0" role="presentation"></div>
+      <div className="block h-1 w-full rounded-full bg-zinc-900 transition-transform duration-200 peer-checked/hamburger:-rotate-45 peer-checked/hamburger:-translate-y-[0.5rem]" role="presentation"></div>
 
-      <nav className="fixed right-0 top-28 z-50 h-body w-[28rem] max-w-full py-4 px-10 flex flex-col flex-wrap translate-x-full transition-transform duration-250 bg-zinc-900 text-zinc-100 text-2xl pointer-events-none peer-checked/hamburger:translate-x-0 peer-checked/hamburger:pointer-events-auto max-lg:landscape:h-body-no-footer" aria-hidden={!isChecked}>
+      <nav
+        id="site-nav"
+        className="fixed right-0 top-28 z-50 h-body w-[28rem] max-w-full py-4 px-10 flex flex-col flex-wrap translate-x-full transition-transform duration-200 bg-zinc-900 text-zinc-100 text-2xl pointer-events-none peer-checked/hamburger:translate-x-0 peer-checked/hamburger:pointer-events-auto max-lg:landscape:h-body-no-footer"
+        aria-hidden={!isChecked}
+      >
 
         <a
           className="block p-4 hover:text-theme-orange focus-visible:text-theme-orange"

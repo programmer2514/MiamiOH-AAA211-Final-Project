@@ -8,6 +8,11 @@ import { ImageProfile, ImageProfileLandscape } from '../images';
 export default function About({ className }) {
   const page = useContext(PageContext);
 
+  function onLoadHandler(e) {
+    e.target.classList.add('transition-all', 'duration-500');
+    e.target.classList.remove('!opacity-0', '!-translate-x-1/4');
+  }
+
   useEffect(() => {
     document.getElementById('stripes')?.classList.remove('!opacity-0', '!translate-x-1/4');
     document.getElementById('bg-grad-old')?.classList.remove('!opacity-0');
@@ -45,11 +50,6 @@ export default function About({ className }) {
       document.getElementById('bg-grad-old')?.classList.add('!opacity-0');
       document.getElementById('bg-grad')?.classList.remove('!opacity-0');
       document.getElementById('h1')?.classList.remove('!opacity-0', '!-translate-y-1/4');
-
-      document.querySelectorAll('main img')?.forEach((elem) => {
-        elem.classList.add('transition-all', 'duration-500');
-        elem.classList.remove('!opacity-0', '!-translate-x-1/4');
-      });
 
       document.querySelectorAll('main div div [role="presentation"]')?.forEach((elem) => {
         elem.classList.add('transition-all', 'duration-500');
@@ -124,11 +124,13 @@ export default function About({ className }) {
           className="w-96 block rounded-xl max-lg:hidden"
           src={ImageProfile}
           alt="A person with a dark blue polo shirt and asymmetrical purple hair stands in front of a blurry natural background"
+          onLoad={onLoadHandler}
         />
         <img
           className="w-11/12 mt-8 block rounded-xl lg:hidden"
           src={ImageProfileLandscape}
           alt="A person with a dark blue polo shirt and asymmetrical purple hair stands in front of a blurry natural background"
+          onLoad={onLoadHandler}
         />
       </div>
 
