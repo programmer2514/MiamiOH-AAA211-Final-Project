@@ -64,7 +64,7 @@ export default function Resources({ className }) {
   return (
     <main
       id="content"
-      className={className + ' bg-zinc-900 flex flex-wrap justify-center items-start content-start'}
+      className={className + ' flex flex-wrap justify-center items-start content-start'}
     >
 
       <DisabilityStripes />

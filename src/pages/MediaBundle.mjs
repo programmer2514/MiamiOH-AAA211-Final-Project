@@ -64,7 +64,7 @@ export default function MediaBundle({ className }) {
   return (
     <main
       id="content"
-      className={className + ' bg-zinc-900 flex justify-center items-start content-start'}
+      className={className + ' flex justify-center items-start content-start'}
     >
 
       <DisabilityStripes />

@@ -3,8 +3,9 @@
   "version": "1.0.0",
   "main": "index.mjs",
   "scripts": {
-    "start": "webpack-dev-server --mode development --open --hot",
-    "build": "webpack --mode production"
+    "start": "npm run clean & start npx tailwindcss -i ./src/index.css -o ./src/build.css --watch & webpack-dev-server --mode development --open --hot",
+    "build": "npm run clean & start npx tailwindcss -i ./src/index.css -o ./src/build.css & pause & webpack --mode production",
+    "clean": "rmdir /S /Q public & del /Q src\\build.css"
   },
   "author": "Benjamin Pryor",
   "license": "MIT",

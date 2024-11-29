@@ -61,7 +61,7 @@ export default function About({ className }) {
   return (
     <main
       id="content"
-      className={className + ' bg-zinc-900 flex justify-center items-start content-start'}
+      className={className + ' flex justify-center items-start content-start'}
     >
 
       <DisabilityStripes />
@@ -72,16 +72,28 @@ export default function About({ className }) {
         to="#c8bd20"
       />
 
-      <div className="px-[10%] py-8 h-fit min-h-full flex flex-row-reverse items-center z-10 max-lg:flex-col">
-        <div className="w-full ml-8 text-zinc-100 text-xl font-light [&_p]:mt-4 [&_p]:mx-2">
+      <div className="px-[10%] py-8 h-fit min-h-full flex flex-row items-center z-10">
+        <img
+          className="w-96 block rounded-xl max-lg:hidden"
+          src={ImageProfile}
+          alt="A person with a dark blue polo shirt and asymmetrical purple hair stands in front of a blurry natural background"
+          onLoad={onLoadHandler}
+        />
+        <div className="w-full ml-8 text-zinc-100 text-xl font-light [&_p]:mt-4 [&_p]:mx-2 max-lg:ml-0">
           <div
             className="block border-b-1 mb-2 w-24 border-solid border-zinc-100 opacity-50 max-lg:hidden"
             role="presentation"
           >
           </div>
-          <h1 id="h1" className="text-zinc-100 text-[3vmax] mx-2 font-bold leading-normal drop-shadow-2xl max-lg:text-[4vmax]">
+          <h1 id="h1" className="text-zinc-100 text-[3vmax] mx-2 font-bold leading-normal drop-shadow-2xl max-lg:text-[4vmax] max-lg:text-center">
             About This Project
           </h1>
+          <img
+            className="w-11/12 my-8 block rounded-xl mx-auto lg:hidden"
+            src={ImageProfileLandscape}
+            alt="A person with a dark blue polo shirt and asymmetrical purple hair stands in front of a blurry natural background"
+            onLoad={onLoadHandler}
+          />
           <p>
             Disability & Diversity is a project created by Benjamin Pryor for
             the Fall 2023 AAA 211 class at Miami University.
@@ -120,18 +132,6 @@ export default function About({ className }) {
             .
           </p>
         </div>
-        <img
-          className="w-96 block rounded-xl max-lg:hidden"
-          src={ImageProfile}
-          alt="A person with a dark blue polo shirt and asymmetrical purple hair stands in front of a blurry natural background"
-          onLoad={onLoadHandler}
-        />
-        <img
-          className="w-11/12 mt-8 block rounded-xl lg:hidden"
-          src={ImageProfileLandscape}
-          alt="A person with a dark blue polo shirt and asymmetrical purple hair stands in front of a blurry natural background"
-          onLoad={onLoadHandler}
-        />
       </div>
 
     </main>

@@ -87,7 +87,7 @@ export default function Article({ className }) {
   return (
     <main
       id="content"
-      className={className + ' bg-zinc-900 flex flex-col justify-start items-center content-center'}
+      className={className + ' flex flex-col justify-start items-center content-center'}
     >
 
       <DisabilityStripes />

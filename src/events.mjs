@@ -1,6 +1,8 @@
 import { getCurrentPage, getNextPage, getPrevPage } from './pages';
 
 var currentDate = Date.now();
+var touchStartY = -1;
+var touchScrollY = -1;
 
 // Handles keypress events
 function handleKeypress(e, page) {
@@ -68,9 +70,49 @@ function handleScroll(e, page) {
   }
 }
 
+// Handles scrolling between pages on mobile
+function handleTouchStart(e) {
+  touchStartY = e.touches[0].clientY;
+  touchScrollY = document.querySelector('main').scrollTop;
+}
+
+function handleTouchMove(e, page) {
+  let deltaY = (e.touches[0].clientY - touchStartY) / outerHeight;
+  if (Math.abs(deltaY) > 0.1) {
+    if (Date.now() - currentDate >= 250) {
+      let newPage = null;
+      let main = document.querySelector('main');
+
+      if (deltaY > 0) {
+        if (main.scrollTop === 0 && touchScrollY !== -1) {
+          newPage = getPrevPage(page);
+        }
+      }
+      else {
+        if (main.scrollTop === touchScrollY) {
+          newPage = getNextPage(page);
+        }
+      }
+
+      if (newPage !== null) {
+        location.href = newPage;
+      }
+    }
+    currentDate = Date.now();
+  }
+}
+
+function handleResize() {
+  touchScrollY = -1;
+}
+
 // Registers event handlers
 export function registerEvents(page, setPage) {
   onkeyup = e => handleKeypress(e, page);
   onwheel = e => handleScroll(e, page);
   onhashchange = e => handlePageChange(e, page, setPage);
+  onresize = handleResize;
+
+  document.ontouchstart = handleTouchStart;
+  document.ontouchmove = e => handleTouchMove(e, page);
 }

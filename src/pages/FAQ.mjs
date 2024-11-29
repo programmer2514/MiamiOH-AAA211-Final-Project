@@ -67,7 +67,7 @@ export default function FAQ({ className }) {
   return (
     <main
       id="content"
-      className={className + ' bg-zinc-900 flex flex-col justify-start items-center text-center'}
+      className={className + ' flex flex-col justify-start items-center text-center'}
     >
 
       <DisabilityStripes />
@@ -82,7 +82,7 @@ export default function FAQ({ className }) {
         Frequently Asked Questions
       </h1>
 
-      <div className="w-full px-[10%] flex flex-wrap justify-center z-10 mb-8">
+      <div className="w-full px-[calc(10%+1rem)] flex flex-wrap justify-center z-10 mb-8">
 
         <div id="dropdown-list" className="border-1 border-solid border-zinc-700 drop-shadow-md rounded-xl overflow-hidden [&>:not(:last-child)]:border-b-1">
           <Dropdown

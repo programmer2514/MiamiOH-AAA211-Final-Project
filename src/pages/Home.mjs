@@ -37,7 +37,7 @@ export default function Home({ className }) {
   return (
     <main
       id="content"
-      className={className + ' bg-zinc-900 flex flex-wrap items-center justify-center content-center portrait:items-start'}
+      className={className + ' flex flex-wrap items-center justify-center content-center portrait:items-start'}
     >
 
       <DisabilityStripes />
