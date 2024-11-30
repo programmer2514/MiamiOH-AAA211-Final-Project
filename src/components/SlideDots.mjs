@@ -2,6 +2,50 @@ import React, { useContext } from 'react';
 
 import { PageContext } from '..';
 
+var hoverTrackList = [];
+
+function dotEnterHandler(e) {
+  if (!window.matchMedia('(hover: hover)').matches) {
+    setTimeout(() => {
+      let dot = {
+        target: e.target,
+        classList: [],
+      };
+
+      e.target.classList.forEach((value) => {
+        if (value.includes('hover:')) {
+          dot.classList.push(value);
+        }
+      });
+
+      dot.classList.forEach((value) => {
+        e.target.classList.remove(value);
+      });
+
+      hoverTrackList.push(dot);
+    }, 1000);
+  }
+}
+
+function dotLeaveHandler(e) {
+  if (!window.matchMedia('(hover: hover)').matches) {
+    let dot;
+    hoverTrackList.forEach((elem) => {
+      if (elem?.target && elem.target === e.target) {
+        dot = elem;
+      }
+    });
+
+    if (dot) {
+      dot.classList.forEach((value) => {
+        e.target.classList.add(value);
+      });
+
+      hoverTrackList.splice(hoverTrackList.indexOf(dot), 1);
+    }
+  }
+}
+
 export default function SlideDots() {
   const page = useContext(PageContext);
 
@@ -16,6 +60,8 @@ export default function SlideDots() {
             }}
             href="#"
             aria-label="Home (Slideshow dot button)"
+            onMouseEnter={dotEnterHandler}
+            onMouseLeave={dotLeaveHandler}
           >
           </a>
           <a
@@ -25,6 +71,8 @@ export default function SlideDots() {
             }}
             href="#about"
             aria-label="About (Slideshow dot button)"
+            onMouseEnter={dotEnterHandler}
+            onMouseLeave={dotLeaveHandler}
           >
           </a>
           <a
@@ -34,6 +82,8 @@ export default function SlideDots() {
             }}
             href="#resources"
             aria-label="Resources (Slideshow dot button)"
+            onMouseEnter={dotEnterHandler}
+            onMouseLeave={dotLeaveHandler}
           >
           </a>
           <a
@@ -43,6 +93,8 @@ export default function SlideDots() {
             }}
             href="#media-bundle"
             aria-label="Media Bundle (Slideshow dot button)"
+            onMouseEnter={dotEnterHandler}
+            onMouseLeave={dotLeaveHandler}
           >
           </a>
           <a
@@ -52,6 +104,8 @@ export default function SlideDots() {
             }}
             href="#faq"
             aria-label="FAQ (Slideshow dot button)"
+            onMouseEnter={dotEnterHandler}
+            onMouseLeave={dotLeaveHandler}
           >
           </a>
         </div>
