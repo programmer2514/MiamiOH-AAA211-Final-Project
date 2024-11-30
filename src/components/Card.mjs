@@ -4,7 +4,7 @@ export default function Card({ src, alt, title, subtitle, href, onLoadHandler, b
   return (
     <a
       id="card"
-      className="w-96 max-w-full flex flex-col justify-start items-stretch content-start bg-zinc-800 border-1 border-zinc-700 border-solid m-4 p-4 rounded-xl drop-shadow-md hover:translate-y-[0.125rem] hover:drop-shadow-sm"
+      className="w-96 max-w-full flex flex-col justify-start items-stretch content-start bg-zinc-800 border-1 border-zinc-700 border-solid m-4 p-4 rounded-xl drop-shadow-md hover:translate-y-[0.125rem] hover:drop-shadow-sm !opacity-0"
       href={href}
       role="button"
       aria-label={(download ? 'Download - ' : 'Read Article - ') + title}

@@ -1,4 +1,4 @@
-import React, { useState, createContext } from 'react';
+import React, { useState, useEffect, createContext } from 'react';
 import client from 'react-dom/client';
 
 import './build.css';
@@ -14,7 +14,9 @@ export default function App() {
   const [page, setPage] = useState(getCurrentPage());
 
   // Setup event handlers
-  registerEvents(page, setPage);
+  useEffect(() => {
+    registerEvents(page, setPage);
+  }, [page]);
 
   return (
     <PageContext.Provider value={page}>

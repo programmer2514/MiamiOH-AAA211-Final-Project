@@ -19,12 +19,6 @@ export default function FAQ({ className }) {
   const page = useContext(PageContext);
 
   useEffect(() => {
-    document.getElementById('stripes')?.classList.add('!opacity-0', '!translate-x-1/4');
-    document.getElementById('bg-grad-old')?.classList.remove('!opacity-0');
-    document.getElementById('bg-grad')?.classList.add('!opacity-0');
-    document.getElementById('h1')?.classList.add('!opacity-0', '!-translate-y-1/4');
-    document.getElementById('dropdown-list')?.classList.add('!opacity-0');
-
     setTimeout(() => {
       document.getElementById('stripes')?.classList.add('transition-all', 'duration-500');
       document.getElementById('bg-grad-old')?.classList.add('transition-all', 'duration-500');
@@ -37,24 +31,22 @@ export default function FAQ({ className }) {
       document.getElementById('bg-grad')?.classList.remove('!opacity-0');
       document.getElementById('h1')?.classList.remove('!opacity-0', '!-translate-y-1/4');
       document.getElementById('dropdown-list')?.classList.remove('!opacity-0');
-    }, 0);
 
-    let dropdownElems = document.querySelectorAll('#dropdown');
+      let dropdownElems = document.querySelectorAll('#dropdown');
 
-    for (let i = 0; i < dropdownElems.length; i++) {
-      let elem = dropdownElems[i];
-
-      elem.classList.add('!opacity-0', '!-translate-y-1/4');
-
-      setTimeout(() => {
-        elem.classList.add('transition-all', 'duration-200');
-        elem.classList.remove('!opacity-0', '!-translate-y-1/4');
+      for (let i = 0; i < dropdownElems.length; i++) {
+        let elem = dropdownElems[i];
 
         setTimeout(() => {
-          elem.classList.remove('transition-all', 'duration-200');
-        }, 200);
-      }, i * 20);
-    }
+          elem.classList.add('transition-all', 'duration-200');
+          elem.classList.remove('!opacity-0', '!-translate-y-1/4');
+
+          setTimeout(() => {
+            elem.classList.remove('transition-all', 'duration-200');
+          }, 200);
+        }, i * 20);
+      }
+    }, 10);
 
     document.querySelectorAll('article a').forEach((elem) => {
       elem.setAttribute('target', '_blank');
@@ -70,7 +62,7 @@ export default function FAQ({ className }) {
       className={className + ' flex flex-col justify-start items-center text-center'}
     >
 
-      <DisabilityStripes />
+      <DisabilityStripes className="!opacity-0 !translate-x-1/4" />
       <GradientBackground
         oldFrom="#1466d1"
         oldTo="#20c2c8"
@@ -78,13 +70,13 @@ export default function FAQ({ className }) {
         to="#23e77c"
       />
 
-      <h1 id="h1" className="text-zinc-100 text-[3vmax] max-w-full m-8 font-bold leading-normal drop-shadow-2xl max-lg:text-[4vmax] z-10">
+      <h1 id="h1" className="text-zinc-100 text-[3vmax] max-w-full m-8 font-bold leading-normal drop-shadow-2xl max-lg:text-[4vmax] z-10 !opacity-0 !-translate-y-1/4">
         Frequently Asked Questions
       </h1>
 
       <div className="w-full px-[calc(10%+1rem)] flex flex-wrap justify-center z-10 mb-8">
 
-        <div id="dropdown-list" className="border-1 border-solid border-zinc-700 drop-shadow-md rounded-xl overflow-hidden [&>:not(:last-child)]:border-b-1">
+        <div id="dropdown-list" className="border-1 border-solid border-zinc-700 drop-shadow-md rounded-xl overflow-hidden [&>:not(:last-child)]:border-b-1 !opacity-0">
           <Dropdown
             title="What counts as a disability?"
             content={FAQWhatCounts}

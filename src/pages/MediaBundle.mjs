@@ -39,11 +39,6 @@ export default function MediaBundle({ className }) {
   }
 
   useEffect(() => {
-    document.getElementById('stripes')?.classList.remove('!opacity-0', '!translate-x-1/4');
-    document.getElementById('bg-grad-old')?.classList.remove('!opacity-0');
-    document.getElementById('bg-grad')?.classList.add('!opacity-0');
-    document.getElementById('h1')?.classList.add('!opacity-0', '!-translate-y-1/4');
-
     setTimeout(() => {
       document.getElementById('stripes')?.classList.add('transition-all', 'duration-500');
       document.getElementById('bg-grad-old')?.classList.add('transition-all', 'duration-500');
@@ -54,11 +49,7 @@ export default function MediaBundle({ className }) {
       document.getElementById('bg-grad-old')?.classList.add('!opacity-0');
       document.getElementById('bg-grad')?.classList.remove('!opacity-0');
       document.getElementById('h1')?.classList.remove('!opacity-0', '!-translate-y-1/4');
-    }, 0);
-
-    document.querySelectorAll('#card').forEach((elem) => {
-      elem.classList.add('!opacity-0');
-    });
+    }, 10);
   }, [page]);
 
   return (
@@ -77,7 +68,7 @@ export default function MediaBundle({ className }) {
 
       <div className="w-full px-[10%] flex flex-wrap justify-center z-10 mb-8">
 
-        <h1 id="h1" className="text-zinc-100 text-[3vmax] w-full m-8 font-bold leading-normal drop-shadow-2xl text-center max-lg:text-[4vmax]">
+        <h1 id="h1" className="text-zinc-100 text-[3vmax] w-full m-8 font-bold leading-normal drop-shadow-2xl text-center max-lg:text-[4vmax] !opacity-0 !-translate-y-1/4">
           Media Bundle
         </h1>
 

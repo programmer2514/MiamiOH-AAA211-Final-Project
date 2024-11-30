@@ -40,7 +40,13 @@ function handlePageChange(e, page, setPage) {
     history.replaceState(null, '', e.oldURL);
   }
   else {
-    setPage(getCurrentPage());
+    document.querySelectorAll('main > *:not(#stripes, #bg-grad)').forEach((elem) => {
+      elem.classList.add('transition-all', 'duration-150');
+      elem.style.opacity = '0';
+    });
+    setTimeout(() => {
+      setPage(getCurrentPage());
+    }, 150);
   }
 }
 
@@ -113,6 +119,7 @@ export function registerEvents(page, setPage) {
   onhashchange = e => handlePageChange(e, page, setPage);
   onresize = handleResize;
 
-  document.ontouchstart = handleTouchStart;
-  document.ontouchmove = e => handleTouchMove(e, page);
+  let main = document.querySelector('main');
+  main.ontouchstart = handleTouchStart;
+  main.ontouchmove = e => handleTouchMove(e, page);
 }

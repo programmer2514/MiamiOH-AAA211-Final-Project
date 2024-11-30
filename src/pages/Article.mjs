@@ -21,9 +21,11 @@ export default function Article({ className }) {
   const page = useContext(PageContext);
 
   useEffect(() => {
-    document.getElementById('stripes')?.classList.remove('!opacity-0', '!translate-x-1/4');
-    document.getElementById('bg-grad-old')?.classList.remove('!opacity-0');
-    document.getElementById('bg-grad')?.classList.add('!opacity-0');
+    let articleElems = document.querySelectorAll('article > *, aside > *');
+
+    articleElems.forEach((elem) => {
+      elem.classList.add('!opacity-0', '!-translate-x-1/4');
+    });
 
     setTimeout(() => {
       document.getElementById('stripes')?.classList.add('transition-all', 'duration-500');
@@ -33,20 +35,16 @@ export default function Article({ className }) {
       document.getElementById('stripes')?.classList.add('!opacity-0', '!translate-x-1/4');
       document.getElementById('bg-grad-old')?.classList.add('!opacity-0');
       document.getElementById('bg-grad')?.classList.remove('!opacity-0');
-    }, 0);
 
-    let articleElems = document.querySelectorAll('article > *, aside > *');
+      for (let i = 0; i < articleElems.length; i++) {
+        let elem = articleElems[i];
 
-    for (let i = 0; i < articleElems.length; i++) {
-      let elem = articleElems[i];
-
-      elem.classList.add('!opacity-0', '!-translate-x-1/4');
-
-      setTimeout(() => {
-        elem.classList.add('transition-all', 'duration-500');
-        elem.classList.remove('!opacity-0', '!-translate-x-1/4');
-      }, i * 25);
-    }
+        setTimeout(() => {
+          elem.classList.add('transition-all', 'duration-500');
+          elem.classList.remove('!opacity-0', '!-translate-x-1/4');
+        }, i * 25);
+      }
+    }, 10);
 
     document.querySelectorAll('article a, aside a').forEach((elem) => {
       elem.setAttribute('target', '_blank');

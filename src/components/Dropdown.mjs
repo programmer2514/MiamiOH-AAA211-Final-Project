@@ -46,7 +46,7 @@ export default function Dropdown({ title, content, uid }) {
   return (
     <section
       id="dropdown"
-      className="text-left text-zinc-100 bg-zinc-800 border-zinc-700 border-solid"
+      className="text-left text-zinc-100 bg-zinc-800 border-zinc-700 border-solid !opacity-0 !-translate-y-1/4"
     >
       <a
         id={'dropdown-' + uid}

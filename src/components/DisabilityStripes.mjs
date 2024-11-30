@@ -1,10 +1,10 @@
 import React from 'react';
 
-export default function DisabilityStripes() {
+export default function DisabilityStripes({ className }) {
   return (
     <svg
       id="stripes"
-      className="fixed top-0 left-0 w-full h-screen brightness-25 -z-10 translate-x-[14%]"
+      className={'fixed top-0 left-0 w-full h-screen brightness-25 -z-10 translate-x-[14%] ' + className}
       viewBox="0 0 1362.55 1080"
       preserveAspectRatio="none"
       role="presentation"
