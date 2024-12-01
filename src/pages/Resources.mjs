@@ -8,7 +8,7 @@ import {
   ImageDisabilityInEverydayLife,
   ImageDisabilityInTheWorkplace,
   ImageEnactingSocialChange,
-  ImageTheSocialModel,
+  ImageModelsOfDisability,
   ImageWhatIsADisability,
 } from './../images/cards';
 
@@ -82,11 +82,20 @@ export default function Resources({ className }) {
         />
 
         <Card
-          src={ImageTheSocialModel}
+          src={ImageModelsOfDisability}
           alt="A simplified graphic of a group of people representing various disabilities is overlaid in the colors of the rainbow on a black background"
-          title="The Social Model"
-          subtitle="A new way to view disability"
-          href="#the-social-model"
+          title="Models of Disability"
+          subtitle="How your view towards disability affects what you can do about it"
+          href="#models-of-disability"
+          onLoadHandler={onLoadHandler}
+        />
+
+        <Card
+          src={ImageAccidentalDiscrimination}
+          alt="A person in a wheelchair sits in front of a flight of stairs, staring at them"
+          title="Accidental Discrimination"
+          subtitle="How society excludes people with disabilities and what you can do about it"
+          href="#accidental-discrimination"
           onLoadHandler={onLoadHandler}
         />
 
@@ -96,15 +105,6 @@ export default function Resources({ className }) {
           title="Enacting Social Change"
           subtitle="How do I change society?"
           href="#enacting-social-change"
-          onLoadHandler={onLoadHandler}
-        />
-
-        <Card
-          src={ImageAccidentalDiscrimination}
-          alt="A person in a wheelchair sits in front of a flight of stairs, staring at them"
-          title="Accidental Discrimination"
-          subtitle="How society excludes disabled people and what you can do about it"
-          href="#accidental-discrimination"
           onLoadHandler={onLoadHandler}
         />
 

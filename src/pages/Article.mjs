@@ -10,7 +10,7 @@ import {
   ArticleDisabilityInEverydayLife,
   ArticleDisabilityInTheWorkplace,
   ArticleEnactingSocialChange,
-  ArticleTheSocialModel,
+  ArticleModelsOfDisability,
   ArticleWhatIsADisability,
 } from './../articles';
 
@@ -61,8 +61,8 @@ export default function Article({ className }) {
       case 'what-is-a-disability':
         articleText = ArticleWhatIsADisability;
         break;
-      case 'the-social-model':
-        articleText = ArticleTheSocialModel;
+      case 'models-of-disability':
+        articleText = ArticleModelsOfDisability;
         break;
       case 'accidental-discrimination':
         articleText = ArticleAccidentalDiscrimination;
@@ -96,9 +96,9 @@ export default function Article({ className }) {
         to="#c82090"
       />
 
-      <div className="py-2 flex flex-col px-[15%] w-full text-zinc-100 relative z-10 *:drop-shadow-2xl">
+      <div className="py-2 flex flex-col items-center px-[15%] w-full text-zinc-100 relative z-10 *:drop-shadow-2xl">
 
-        <nav className="border-b-1 border-zinc-400 border-solid flex justify-between">
+        <nav className="border-b-1 border-zinc-400 border-solid flex justify-between w-full">
           <a
             className="block py-4 max-w-fit text-xl hover:text-theme-orange focus-visible:text-theme-orange after:block after:h-2p after:content-blank after:bottom-0 after:left-1/2 after:relative after:bg-theme-orange after:transition-all after:duration-200 after:w-0 hover:after:w-full hover:after:left-0 focus-visible:after:w-full focus-visible:after:left-0"
             href="#resources"
@@ -114,10 +114,13 @@ export default function Article({ className }) {
 
         <article
           className={
-            'leading-relaxed' + ' '
+            'leading-relaxed max-w-2xl' + ' '
             + '[&_h1]:mt-8 [&_h1]:text-4xl [&_h1]:font-bold' + ' '
             + '[&_h2]:text-zinc-400 [&_h2]:uppercase [&_h2]:mt-2 [&_h2]:text-xl [&_h2]:font-extralight [&_h2]:mb-6' + ' '
-            + '[&_p]:mt-4 [&_p]:font-light [&_p]:text-xl' + ' '
+            + '[&_h3]:mt-6 [&_h3]:text-2xl [&_h3]:font-bold' + ' '
+            + '[&_p]:mt-6 [&_p]:font-light [&_p]:text-xl' + ' '
+            + '[&_strong]:font-semibold' + ' '
+            + '[&_ol]:mt-6 [&_ol]:ml-12 [&_ol]:font-light [&_ol]:text-xl [&_ol]:list-decimal' + ' '
             + '[&_blockquote]:px-4 [&_blockquote]:mt-4 [&_blockquote]:border-l-4 [&_blockquote]:border-zinc-400 [&_blockquote]:border-solid [&_blockquote]:text-zinc-400' + ' '
             + '[&_cite]:not-italic [&_cite]:text-sm [&_cite]:align-super [&_cite]:text-zinc-400' + ' '
             + '[&_a]:text-sky-400 [&_a]:underline'
@@ -130,7 +133,7 @@ export default function Article({ className }) {
 
         <aside
           className={
-            'leading-relaxed text-zinc-200 py-4 border-t-1 border-zinc-400 border-solid mt-8' + ' '
+            'leading-relaxed text-zinc-200 py-4 border-t-1 border-zinc-400 border-solid mt-8 w-full' + ' '
             + '[&_h3]:mb-2 [&_h3]:text-xl [&_h3]:font-bold' + ' '
             + '[&_p]:ml-4 [&_p]:font-light [&_p]:text-lg' + ' '
             + '[&_a]:text-sky-400 [&_a]:underline'

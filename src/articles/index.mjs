@@ -3,7 +3,7 @@ import ArticleAccidentalDiscrimination from './accidental-discrimination.md';
 import ArticleDisabilityInEverydayLife from './disability-in-everyday-life.md';
 import ArticleDisabilityInTheWorkplace from './disability-in-the-workplace.md';
 import ArticleEnactingSocialChange from './enacting-social-change.md';
-import ArticleTheSocialModel from './the-social-model.md';
+import ArticleModelsOfDisability from './models-of-disability.md';
 import ArticleWhatIsADisability from './what-is-a-disability.md';
 
 export {
@@ -12,6 +12,6 @@ export {
   ArticleDisabilityInEverydayLife,
   ArticleDisabilityInTheWorkplace,
   ArticleEnactingSocialChange,
-  ArticleTheSocialModel,
+  ArticleModelsOfDisability,
   ArticleWhatIsADisability,
 };

@@ -76,7 +76,7 @@ export default function FAQ({ className }) {
 
       <div className="w-full px-[calc(10%+1rem)] flex flex-wrap justify-center z-10 mb-8">
 
-        <div id="dropdown-list" className="border-1 border-solid border-zinc-700 drop-shadow-md rounded-xl overflow-hidden [&>:not(:last-child)]:border-b-1 !opacity-0">
+        <div id="dropdown-list" className="border-1 border-solid border-zinc-700 drop-shadow-md rounded-xl overflow-hidden max-w-6xl [&>:not(:last-child)]:border-b-1 !opacity-0">
           <Dropdown
             title="What counts as a disability?"
             content={FAQWhatCounts}
@@ -108,12 +108,12 @@ export default function FAQ({ className }) {
             uid="5"
           />
           <Dropdown
-            title="How can I include disabled people?"
+            title="How can I include people with disabilities?"
             content={FAQHowToInclude}
             uid="6"
           />
           <Dropdown
-            title="How do I offer a disabled person help without offending them?"
+            title="How do I offer a person who has a disability help without offending them?"
             content={FAQOfferHelp}
             uid="7"
           />
