@@ -121,7 +121,6 @@ export default function Article({ className }) {
             + '[&_p]:mt-6 [&_p]:font-light [&_p]:text-xl' + ' '
             + '[&_strong]:font-semibold' + ' '
             + '[&_ol]:mt-6 [&_ol]:ml-12 [&_ol]:font-light [&_ol]:text-xl [&_ol]:list-decimal' + ' '
-            + '[&_blockquote]:px-4 [&_blockquote]:mt-4 [&_blockquote]:border-l-4 [&_blockquote]:border-zinc-400 [&_blockquote]:border-solid [&_blockquote]:text-zinc-400' + ' '
             + '[&_cite]:not-italic [&_cite]:text-sm [&_cite]:align-super [&_cite]:text-zinc-400' + ' '
             + '[&_a]:text-sky-400 [&_a]:underline'
           }

@@ -70,12 +70,8 @@ export default function Dropdown({ title, content, uid }) {
         <div
           className={
             'leading-relaxed p-6 -translate-y-8' + ' '
-            + '[&_h1]:mt-8 [&_h1]:text-4xl [&_h1]:font-bold' + ' '
-            + '[&_h2]:text-zinc-400 [&_h2]:uppercase [&_h2]:mt-2 [&_h2]:text-xl [&_h2]:font-extralight [&_h2]:mb-6' + ' '
             + '[&_p]:mt-6 [&_p]:font-light [&_p]:text-xl' + ' '
-            + '[&_ol]:mt-6 [&_ol]:ml-12 [&_ol]:font-light [&_ol]:text-xl [&_ol]:list-decimal' + ' '
-            + '[&_blockquote]:px-4 [&_blockquote]:mt-4 [&_blockquote]:border-l-4 [&_blockquote]:border-zinc-400 [&_blockquote]:border-solid [&_blockquote]:text-zinc-400' + ' '
-            + '[&_cite]:not-italic [&_cite]:text-sm [&_cite]:align-super [&_cite]:text-zinc-400' + ' '
+            + '[&_ul]:mt-2 [&_ul]:ml-12 [&_ul]:font-light [&_ul]:text-xl [&_ul]:list-disc' + ' '
             + '[&_a]:text-sky-400 [&_a]:underline'
           }
         >

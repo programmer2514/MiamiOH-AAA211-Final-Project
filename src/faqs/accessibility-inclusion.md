@@ -1,9 +1,22 @@
-Pariatur dolor sit reprehenderit sunt tempor adipisicing esse culpa eu nostrud officia ullamco. Dolor fugiat ut et qui excepteur dolor do consectetur minim qui est ad. Incididunt enim eu irure culpa laborum cillum dolor est ut laboris commodo aliquip. Ullamco cillum exercitation est veniam fugiat consequat adipisicing excepteur nisi minim consectetur exercitation mollit. Nostrud eiusmod mollit ad pariatur. Incididunt nulla aliquip anim occaecat minim eiusmod adipisicing fugiat ipsum. Sunt reprehenderit qui exercitation exercitation sint dolor.
+To many people, these are synonymous. However, there are small key differences
+between the two that make a very big difference.
 
-Ut enim sint nulla enim ea et mollit Lorem dolor eu occaecat ipsum. Nostrud magna Lorem ad Lorem occaecat magna enim ullamco eu sit reprehenderit in sit do. Dolore cupidatat occaecat velit esse mollit sint sunt ea nulla.
+Accessibility is exactly what it sounds like: Making something accessible to a
+diverse range of people. This can look like having wheelchair ramps on a
+building or using proper coding techniques on a website.
 
-In ut sit nisi cillum non adipisicing quis adipisicing anim aute nostrud. Exercitation et irure aliquip qui in. Laborum aliqua deserunt officia enim pariatur velit enim.
+Inclusion on the other hand is a lot more nuanced and difficult. It goes beyond
+simple accessibility and inherently calls for the equitable treatment of all.
+Including someone is more than just making it possible for them to be
+there&mdash;it's welcoming them in with the same treatment you would give
+anybody else, regardless of who they are.
 
-In [voluptate commodo reprehenderit](//github.com) voluptate. Ullamco anim mollit laborum minim elit dolore. Adipisicing cillum incididunt cillum deserunt labore nisi incididunt nostrud irure exercitation ut. Esse culpa ex do deserunt qui. Excepteur ut eiusmod elit do. Irure id culpa velit cillum laboris nisi enim culpa enim deserunt nulla nulla proident occaecat. Lorem pariatur commodo aliqua cillum elit.
+The difference between accessibility and inclusion is like the difference
+between an unlocked and a vacant bathroom stall. The unlocked stall, you know
+you *can* go in, but you're also not sure if someone just forgot to lock the
+door, and so you feel a certain pressure not to go in just in case. The vacant
+stall on the other hand, you feel fully comfortable entering, knowing that it is
+completely acceptable for you to do so.
 
-Laboris aute ex cupidatat sit qui consequat ad elit irure veniam eiusmod ea. Eu incididunt sit est magna ullamco ea consequat ipsum aliqua reprehenderit. Occaecat fugiat et ipsum culpa dolore laborum dolor consectetur. Labore enim minim esse qui id culpa est culpa nulla adipisicing enim.
+When you make a place accessible, you make it possible for someone to get to it.
+When you make it inclusive, you invite the person in with open arms.

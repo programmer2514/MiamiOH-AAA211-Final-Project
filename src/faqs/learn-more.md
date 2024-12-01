@@ -1,9 +1,20 @@
-Pariatur dolor sit reprehenderit sunt tempor adipisicing esse culpa eu nostrud officia ullamco. Dolor fugiat ut et qui excepteur dolor do consectetur minim qui est ad. Incididunt enim eu irure culpa laborum cillum dolor est ut laboris commodo aliquip. Ullamco cillum exercitation est veniam fugiat consequat adipisicing excepteur nisi minim consectetur exercitation mollit. Nostrud eiusmod mollit ad pariatur. Incididunt nulla aliquip anim occaecat minim eiusmod adipisicing fugiat ipsum. Sunt reprehenderit qui exercitation exercitation sint dolor.
+Apart from this project's [Resources](#resources) section, several resources
+exist online to help you continue your learning journey.
 
-Ut enim sint nulla enim ea et mollit Lorem dolor eu occaecat ipsum. Nostrud magna Lorem ad Lorem occaecat magna enim ullamco eu sit reprehenderit in sit do. Dolore cupidatat occaecat velit esse mollit sint sunt ea nulla.
+These include:
 
-In ut sit nisi cillum non adipisicing quis adipisicing anim aute nostrud. Exercitation et irure aliquip qui in. Laborum aliqua deserunt officia enim pariatur velit enim.
+* [Disability & Health [CDC]](https://www.cdc.gov/ncbddd/disabilityandhealth/index.html) -
+    A central hub for learning about disabilities of all kinds
+* [Understood](https://www.understood.org/) -
+    A nonprofit providing education and support materials specifically focused
+    on learning and intellectual disabilities
+* [Disability Resources](https://www.disabilityresources.org/) -
+    A well-organized central archive of information and articles related to
+    disability across the web
+* [Center for Disability Rights](https://cdrnys.org/) -
+    A New York nonprofit providing advocacy and support resources for people
+    with disabilities of all kinds
 
-In [voluptate commodo reprehenderit](//github.com) voluptate. Ullamco anim mollit laborum minim elit dolore. Adipisicing cillum incididunt cillum deserunt labore nisi incididunt nostrud irure exercitation ut. Esse culpa ex do deserunt qui. Excepteur ut eiusmod elit do. Irure id culpa velit cillum laboris nisi enim culpa enim deserunt nulla nulla proident occaecat. Lorem pariatur commodo aliqua cillum elit.
-
-Laboris aute ex cupidatat sit qui consequat ad elit irure veniam eiusmod ea. Eu incididunt sit est magna ullamco ea consequat ipsum aliqua reprehenderit. Occaecat fugiat et ipsum culpa dolore laborum dolor consectetur. Labore enim minim esse qui id culpa est culpa nulla adipisicing enim.
+As always, the best possible way to learn about any specific person or group of
+people is to talk with them directly. The resources above are general, and may
+not fully apply to every group of disabilities.
