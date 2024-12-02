@@ -74,6 +74,8 @@ export default {
         { from: './src/images/favicon/favicon-32x32.png' },
         { from: './src/images/favicon/SocialCard.jpg' },
         { from: './src/downloads/Handout.pdf' },
+        { from: './src/downloads/Poster.pdf' },
+        { from: './src/downloads/Pamphlet.pdf' },
         { from: './src/downloads/Instagram.png' },
         { from: './src/downloads/Snapchat.png' },
         { from: './src/downloads/Twitter-Facebook.png' },

@@ -109,7 +109,7 @@ export default function MediaBundle({ className }) {
           src={ImagePoster}
           alt=""
           title="Poster"
-          href="#"
+          href="Poster.pdf"
           buttonText="Download"
           newPage="true"
           download="Poster.pdf"
@@ -120,7 +120,7 @@ export default function MediaBundle({ className }) {
           src={ImagePamphlet}
           alt=""
           title="Pamphlet"
-          href="#"
+          href="Pamphlet.pdf"
           buttonText="Download"
           newPage="true"
           download="Pamphlet.pdf"
